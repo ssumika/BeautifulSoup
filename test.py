@@ -14,3 +14,4 @@ m = MeCab.Tagger("-Ochasen")
 a = m.parse(t)
 words = [i.split()[0] for i in a.splitlines()]
 print(words) 
+print("MACでも動いたのでヨシ！")
