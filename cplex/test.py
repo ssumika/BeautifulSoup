@@ -1,3 +1,4 @@
+#仮想環境入るもよし、$py -3.8 test.pyもよし(macの検証はこれから)
 import cplex
 
 var = ['x', 'y'] # variables
