@@ -23,31 +23,96 @@ problem = pulp.LpProblem('完全栄養マクドナルド問題',sense=pulp.LpMin
 problem.setObjective(pulp.lpDot(df["エネルギー kcal"],df["個数"]))
 
 """
-if not np.isnan(df_max_min.loc["たんぱく質 g","上限"]):
-    print("!")
-else:
-    print("?")
-    problem.addConstraint(pulp.lpDot(df["たんぱく質 g"],df["個数"])>=df_max_min.loc["たんぱく質 g","上限"])
-
-"""
 for nutrition in df_max_min.index:
     if not np.isnan(df_max_min.loc[nutrition,"上限"]):
        print(nutrition,"の上限は",df_max_min.loc[nutrition,"上限"])
     if not np.isnan(df_max_min.loc[nutrition,"下限"]):
        print(nutrition,"の下限は",df_max_min.loc[nutrition,"下限"])
 
-
+"""
+"""
 nutrition="たんぱく質 g"
 if not np.isnan(df_max_min.loc[nutrition,"上限"]):
     problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
 if not np.isnan(df_max_min.loc[nutrition,"下限"]):
     problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
 
+
 nutrition="脂質 g"
 if not np.isnan(df_max_min.loc[nutrition,"上限"]):
     problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
 if not np.isnan(df_max_min.loc[nutrition,"下限"]):
     problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="カリウム mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+
+nutrition="カルシウム mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+
+nutrition="リン mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+
+nutrition="鉄 mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="ビタミンA μg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="ビタミンB1 mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="ビタミンB2 mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="ナイアシン mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="食物繊維 mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="ビタミンC mg"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
+nutrition="食塩相当量 g"
+if not np.isnan(df_max_min.loc[nutrition,"上限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
+if not np.isnan(df_max_min.loc[nutrition,"下限"]):
+    problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
+
 """
 # 拘束条件
 for nutrition in df_max_min.index:
@@ -55,14 +120,15 @@ for nutrition in df_max_min.index:
       problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])<=df_max_min.loc[nutrition,"上限"])
     if not np.isnan(df_max_min.loc[nutrition,"下限"]):
       problem.addConstraint(pulp.lpDot(df[nutrition],df["個数"])>=df_max_min.loc[nutrition,"下限"])
-      
 
 # 重量に条件
-problem.addConstraint(pulp.lpDot(df["製品重量"],df["個数"])<=2000)
+problem.addConstraint(pulp.lpDot(df["製品重量 g/個"],df["個数"])<=2000)
+
 
 # 問題を解く
 status = problem.solve()
 print(pulp.LpStatus[problem.status])
+
 
 # 答えの表示
 for v in problem.variables():
@@ -73,4 +139,5 @@ print(f"総カロリー:{pulp.value(problem.objective)}kcal")
 
 for nutrition in df_max_min.index:
   print(nutrition + ":" + str(round(pulp.lpDot(df[nutrition], df["個数"]).value(),ndigits=1)))
-"""
+
+print(problem)
